@@ -290,42 +290,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     func getBallColor(_ ballSize: CGFloat) -> SKColor{
-        
-        switch ballSize {
-        case 100:
-            return SKColor(red: 255.0, green: 0.0, blue: 0.0, alpha: 1)
-        case 90:
-            return SKColor(red: 245.0, green: 0.0, blue: 0.0, alpha: 1)
-        case 80:
-            return SKColor(red: 235.0, green: 0.0, blue: 0.0, alpha: 1)
-        case 70:
-            return SKColor(red: 215.0, green: 0.0, blue: 0.0, alpha: 1)
-        case 60:
-            return SKColor(red: 200.0, green: 0.0, blue: 0.0, alpha: 1)
-        case 50:
-            return SKColor(red: 175.0, green: 0.0, blue: 0.0, alpha: 1)
-        case 40:
-            return SKColor(red: 150.0, green: 0.0, blue: 0.0, alpha: 1)
-        case 30:
-            return SKColor(red: 125.0, green: 0.0, blue: 0.0, alpha: 1)
-        case 20:
-            return SKColor(red: 100.0, green: 0.0, blue: 0.0, alpha: 1)
-        case 10:
-            return SKColor(red: 75.0, green: 0.0, blue: 0.0, alpha: 1)
-        case 5:
-            return SKColor(red: 50.0, green: 0.0, blue: 0.0, alpha: 1)
-        case 1:
-            return SKColor(red: 10.0, green: 0.0, blue: 0.0, alpha: 1)
-        default:
-            return SKColor.white
-        }
-        /*Ball Color varient settings,
-         the goal here would be to alter the red,
-         green and blue settings based on the size of the ball.
-         For now, all balls will be white*/
-        
-        //var redVar=CGFloat(255.0), greenVar=CGFloat(0.0), blueVar=CGFloat(0.0)
-        //return SKColor(red: redVar, green: greenVar, blue: blueVar, alpha: 1)
+        let hue = 0.167 * (1 - ballSize/100.0)
+        return SKColor(hue: hue, saturation: 1.0, brightness: 1.0, alpha: 1.0)
     }
     
     /*Clear Button Function*/
